@@ -40,4 +40,5 @@ public class BookDaoMockImp implements BookDao {
         updateBook.setId(book.getId());
         return updateBook;
     }
+
 }

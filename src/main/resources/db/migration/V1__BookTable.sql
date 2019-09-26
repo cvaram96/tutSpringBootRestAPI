@@ -1,4 +1,0 @@
-CREATE TABLE    book(
-id integer NOT NULL PRIMARY KEY,
-title VARCHAR (100) NOT NULL
-)
