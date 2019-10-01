@@ -13,8 +13,9 @@ public class BookServiceMockImp implements BookService {
     BookDao bookDao;
 
     @Override
-    public void addBook(Book book) {
+    public String addBook(Book book) {
         bookDao.addBook(book);
+        return "Book was successfully added";
     }
 
     @Override
@@ -28,8 +29,9 @@ public class BookServiceMockImp implements BookService {
     }
 
     @Override
-    public void removeBook(int id) {
+    public String removeBook(int id) {
         bookDao.removeBook(id);
+        return "Book was removed from the database";
     }
 
     @Override

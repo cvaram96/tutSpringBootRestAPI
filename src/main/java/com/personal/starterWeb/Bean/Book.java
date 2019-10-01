@@ -6,13 +6,11 @@ public class Book {
     int id;
     String title;
     Boolean statusBook;
-    Author author;
 
 
-    public Book(int id, String title, Author author) {
+    public Book(int id, String title){
         this.id = id;
         this.title = title;
-        this.author = author;
     }
 
     public Boolean getStatusBook() {
@@ -23,13 +21,6 @@ public class Book {
         this.statusBook = statusBook;
     }
 
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
 
     public int getId() {
         return id;
@@ -53,7 +44,6 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", statusBook=" + statusBook +
-                ", author=" + author +
                 '}';
     }
 }

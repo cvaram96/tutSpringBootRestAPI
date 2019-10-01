@@ -18,6 +18,9 @@ public class BookDaoMockImp implements BookDao {
 
     @Override
     public List<Book> getBooks() {
+        books.add(new Book(1,"first-demo"));
+        books.add(new Book(2,"second-demo"));
+
         return books;
     }
 

@@ -3,6 +3,8 @@ package com.personal.starterWeb.Controller;
 import com.personal.starterWeb.Bean.Book;
 import com.personal.starterWeb.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,27 +24,27 @@ public class BookController {
     BookService bookService;
 
     @PostMapping("/books")
-    public void addBook(@RequestBody Book book){
-        bookService.addBook(book);
+    public ResponseEntity<String> addBook(@RequestBody Book book){
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.addBook(book));
     }
 
     @GetMapping("/books")
-    public List<Book> getBooks(){
-        return bookService.getBooks();
+    public ResponseEntity<List<Book>> getBooks(){
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.getBooks());
     }
 
     @GetMapping("/books/{id}")
-    public Book getBookById(@PathVariable("id") int id){
-        return bookService.getBookById(id);
+    public ResponseEntity<Book> getBookById(@PathVariable("id") int id){
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.getBookById(id));
     }
     @DeleteMapping("/books/{id}")
-    public void removeBook(@PathVariable("id") int id){
-        bookService.removeBook(id);
+    public ResponseEntity<String> removeBook(@PathVariable("id") int id){
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.removeBook(id));
     }
 
     @PutMapping("/books/{id}")
-    public Book updateBook(@PathVariable("id") int id, @RequestBody Book book){
-        return bookService.updateBook(id, book);
+    public ResponseEntity<Book> updateBook(@PathVariable("id") int id, @RequestBody Book book){
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.updateBook(id, book));
     }
 
 }
