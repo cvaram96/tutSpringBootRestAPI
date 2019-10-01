@@ -1,26 +1,58 @@
 package com.personal.starterWeb.Bean;
 
-public class User extends Person {
-    Book borrowedBook;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-    public User(String name, int id) {
-        super(name, id);
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    int id;
+    String userName;
+    boolean active;
+    String password;
+    String role;
+
+    public int getId() {
+        return id;
     }
 
-    public Book getBorrowedBook() {
-        return borrowedBook;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setBorrowedBook(Book borrowedBook) {
-        this.borrowedBook = borrowedBook;
+    public String getUserName() {
+        return userName;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "borrowedBook=" + borrowedBook +
-                ", name='" + name + '\'' +
-                ", id=" + id +
-                '}';
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

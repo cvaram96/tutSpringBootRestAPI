@@ -1,11 +1,10 @@
 package com.personal.starterWeb.Dao;
 
-import com.personal.starterWeb.Bean.Book;
-import org.springframework.stereotype.Service;
+import com.personal.starterWeb.Bean.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Service
-public interface UserDao {
-    Book getLastBook(int userId);
-    String borrowBook(int userId);
-    String updateMe(int userId, String name);
+import java.util.Optional;
+
+public interface UserDao extends JpaRepository<User,Integer> {
+Optional<User> findByUserName(String userName);
 }

@@ -2,33 +2,19 @@ package com.personal.starterWeb.Bean;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
+    @Id
     int id;
     String title;
-    Boolean statusBook;
-    Author author;
 
 
-    public Book(int id, String title, Author author) {
+    public Book(int id, String title) {
         this.id = id;
         this.title = title;
-        this.author = author;
-    }
-
-    public Boolean getStatusBook() {
-        return statusBook;
-    }
-
-    public void setStatusBook(Boolean statusBook) {
-        this.statusBook = statusBook;
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
     }
 
     public int getId() {
@@ -47,13 +33,4 @@ public class Book {
         this.title = title;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", statusBook=" + statusBook +
-                ", author=" + author +
-                '}';
-    }
 }
