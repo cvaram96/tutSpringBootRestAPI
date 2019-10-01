@@ -2,11 +2,18 @@ package com.personal.starterWeb.Bean;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Book {
-    int id;
-    String title;
-    Boolean statusBook;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Book {
+    @Id
+   private int id;
+   private String title;
+   private boolean statusBook;
+
+    public Book() {
+    }
 
     public Book(int id, String title){
         this.id = id;

@@ -3,6 +3,7 @@ package com.personal.starterWeb.Controller;
 import com.personal.starterWeb.Bean.Book;
 import com.personal.starterWeb.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,6 +21,7 @@ import java.util.List;
 @RestController
 public class BookController {
 
+    @Qualifier("dbBookServiceImp")
     @Autowired
     BookService bookService;
 

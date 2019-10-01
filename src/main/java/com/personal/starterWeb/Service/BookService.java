@@ -1,6 +1,7 @@
 package com.personal.starterWeb.Service;
 
 import com.personal.starterWeb.Bean.Book;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
