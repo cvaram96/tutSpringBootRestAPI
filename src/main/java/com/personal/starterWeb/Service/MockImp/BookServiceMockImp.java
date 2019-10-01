@@ -4,9 +4,11 @@ import com.personal.starterWeb.Bean.Book;
 import com.personal.starterWeb.Dao.BookDao;
 import com.personal.starterWeb.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Profile("mock")
 @Service
 public class BookServiceMockImp implements BookService {
     @Autowired

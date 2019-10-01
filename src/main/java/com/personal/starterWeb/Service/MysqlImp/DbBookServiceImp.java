@@ -4,6 +4,7 @@ import com.personal.starterWeb.Bean.Book;
 import com.personal.starterWeb.Dao.BookMysqlDao;
 import com.personal.starterWeb.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResponseErrorHandler;
@@ -11,6 +12,7 @@ import org.springframework.web.client.ResponseErrorHandler;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+@Profile("mysql")
 @Service
 public class DbBookServiceImp implements BookService {
     @Autowired

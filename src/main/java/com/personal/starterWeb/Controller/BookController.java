@@ -21,7 +21,6 @@ import java.util.List;
 @RestController
 public class BookController {
 
-    @Qualifier("dbBookServiceImp")
     @Autowired
     BookService bookService;
 
